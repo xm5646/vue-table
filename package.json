@@ -1,7 +1,7 @@
 {
-  "name": "vue-table2",
-  "version": "1.0.4",
-  "description": "veu vue-table vue-component",
+  "name": "vue-table-lxm",
+  "version": "1.0.0",
+  "description": "veu vue-table vue-component,is fork from vue-table2",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/naihe138/vue-table.git"
+    "url": "git+https://github.com/xm5646/vue-table.git"
   },
   "keywords": [
     "vue",
@@ -20,7 +20,7 @@
   "author": "naice",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/naihe138/vue-table/issues"
+    "url": "https://github.com/xm5646/vue-table/issues"
   },
-  "homepage": "https://github.com/naihe138/vue-table#readme"
+  "homepage": "https://github.com/xm5646/vue-table#readme"
 }

@@ -40,8 +40,11 @@
 			<!--</li>-->
 		</ul>
 		<div class="passPage">
-			第 <input type="text" class="form-control" :class="'input-' + size" v-model="passPage">页
-			<input class="btn btn-default" :class="'input-' + size" type="button" value="跳转" @click="toPassPage">
+			共{{totalPage}}页/{{totalCount}}条记录
+		</div>
+		<div class="passPage">
+			第 <input type="text" class="form-control" :class="'input-' + size" :style="inputWidth" v-model="passPage">页
+			<input class="btn btn-default" :class="'input-' + size" type="button" value="跳转" :disabled="passPageBtn" @click="toPassPage">
 		</div>
 	</nav>
 </template>
@@ -67,6 +70,9 @@
       totalPage: {
         type: Number
       },
+	  totalCount: {
+        type: Number
+	  },
       maxSize: {
         type: Number,
         'default': 5
@@ -75,7 +81,9 @@
     data () {
       return {
         sliceStart: 0,
-        passPage: null
+		passPageBtn: true,
+        passPage: null,
+	    inputWidth: 'width: 40px;'
       }
     },
     watch: {
@@ -93,7 +101,20 @@
             this.sliceStart = 0
           }
         }
-      }
+      },
+		passPage (value) {
+            if (value >= 1 && value <= this.totalPage) {
+                this.passPageBtn = false;
+            } else {
+                this.passPageBtn = true;
+			}
+			if (value.length >=2) {
+			    this.inputWidth = 'width: ' + Number(40 + value.length*8) + 'px;'
+			} else {
+                this.inputWidth ='width: 40px;'
+			}
+
+		}
     },
     computed: {
       pageSize () {
@@ -542,7 +563,7 @@
 		z-index: 3;
 		color: #fff;
 		cursor: default;
-		background-color: #00a53c;
-		border-color: #00a53c;
+		background-color: #2d8cf0;
+		border-color: #2d8cf0;
 	}
 </style>

@@ -172,6 +172,7 @@
 		<div class="page" v-if="page.totalPage">
 			<pagination :total-page="page.totalPage"
 									:size="'md'"
+									:total-count="page.totalCount"
 									v-model="currentPage"
 									@change="changePage"
 									:max-size="page.maxSize"></pagination>
